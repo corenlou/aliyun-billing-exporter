@@ -27,6 +27,8 @@ serviceMonitor:
 ### Prometheus 会自动发现并开始抓取。
 
 ## Dashboard页面
-<img width="1581" height="741" alt="image" src="https://github.com/user-attachments/assets/6a194547-654e-42fa-800e-075739ed1d4a" />
-<img width="1579" height="634" alt="image" src="https://github.com/user-attachments/assets/c0c58b18-1ba4-4c2d-acfb-8430f63bf03e" />
+<img width="1581" height="741" alt="image" src="https://github.com/user-attachments/assets/046a8830-8923-49a7-afb9-5a32517de8c3" />
+<img width="1579" height="634" alt="image" src="https://github.com/user-attachments/assets/70138971-0c49-4b4a-ab33-af385c127807" />
+
+
 
