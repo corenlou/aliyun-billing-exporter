@@ -1,6 +1,48 @@
+## 自定义value.yaml配置
+### 配置镜像版本
+```
+image:
+  repository: devocenter/aliyun-billing-exporter
+  tag: latest 
+  pullPolicy: IfNotPresent
+```
+### 配置副本数
+```
+replicaCount: 1
+```
+### 配置脚本参数
+```
+env:
+  ## 如果所有的账号都是国际账号则统一写ap-southeast-1，如果都是大陆账号则填写cn-hongzhou,如果是大陆和国际账号混用的话，则需要和下面的secret配置一样填多了一分号";"隔离 例如："ap-southeast-1;cn-hangzhou;cn-hangzhou"
+  region: "ap-southeast-1"
+  month: "2025-09"
+  account: "A;B;C"
+```
+### 配置阿里云账号ACCESSSKEY和SECRETKEY，多账号以分号";"分隔
+secret:
+  accessKey: "AAA;BBB;CCC" 
+  secretKey: "secret1;secret2;secret3"
+```
+### 自定义port
+```
+service:
+  port: 9105
+  type: ClusterIP
+```
+### 限制资源
+```
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
+```
 ## 安装 Helm Chart
 ```
-helm install aliyun-billing ./aliyun-billing-exporter -n namespace --create-namespace -f values.yaml
+cd helm
+helm install aliyun-billing . -n namespace --create-namespace --set.image.tag=latest -f values.yaml
 ```
 
 ## 查看部署
@@ -19,10 +61,15 @@ curl http://localhost:9105/metrics
 ## Prometheus 会自动抓取？
 
 ### 如果你使用 Prometheus Operator（kube-prometheus-stack），
-并且开启：
+开启servicemonitor并且更改serviceMonitor超时时间：
 ```
 serviceMonitor:
+  ### 开启serviceMonitor
   enabled: true
+  #### 抓取间隔
+  interval: 60s
+  #### 抓取超时时间
+  scrapeTimeout: 20s
 ```
 ### Prometheus 会自动发现并开始抓取。
 
