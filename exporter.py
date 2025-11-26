@@ -90,7 +90,6 @@ def metrics():
     months = month_range(START_MONTH)
 
     # 多账号循环
-    #names = ["ltex", "biking"]
     for idx, (ak, sk) in enumerate(zip(ACCESS_KEYS, SECRET_KEYS)):
         region = REGIONS[idx] if idx < len(REGIONS) else REGIONS[0]
         #account_name = f"account{idx+1}"
