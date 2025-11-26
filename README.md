@@ -13,7 +13,9 @@ replicaCount: 1
 ### 配置脚本参数
 ```
 env:
-  ## 如果所有的账号都是国际账号则统一写ap-southeast-1，如果都是大陆账号则填写cn-hongzhou,如果是大陆和国际账号混用的话，则需要和下面的secret配置一样填多了一分号";"隔离 例如："ap-southeast-1;cn-hangzhou;cn-hangzhou"
+  ## 如果所有的账号都是国际账号则统一写ap-southeast-1，
+  ## 如果都是大陆账号则填写cn-hongzhou,
+  ## 如果是大陆和国际账号混用的话，则需要和下面的secret配置一样填多了一分号";"隔离 例如："ap-southeast-1;cn-hangzhou;cn-hangzhou"
   region: "ap-southeast-1"
   month: "2025-09"
   account: "A;B;C"
