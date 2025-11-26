@@ -17,12 +17,15 @@ env:
   ## 如果都是大陆账号则填写cn-hongzhou,
   ## 如果是大陆和国际账号混用的话，则需要和下面的secret配置一样填多了一分号";"隔离 例如："ap-southeast-1;cn-hangzhou;cn-hangzhou"
   region: "ap-southeast-1"
+  ## 自定义从哪个月开始统计费用，时间不宜过长，数据量越大影响服务器资源，数据量太大受prometheus和serviceMonitor scrapeTimeout时间影响
   month: "2025-09"
+  ## 自定义账号名称，可以根据项目来自定
   account: "A;B;C"
 ```
 ### 配置阿里云账号ACCESSSKEY和SECRETKEY，多账号以分号";"分隔
 ```
 secret:
+  ## 注意一一对应
   accessKey: "AAA;BBB;CCC" 
   secretKey: "secret1;secret2;secret3"
 ```
