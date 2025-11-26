@@ -19,6 +19,7 @@ env:
   account: "A;B;C"
 ```
 ### 配置阿里云账号ACCESSSKEY和SECRETKEY，多账号以分号";"分隔
+```
 secret:
   accessKey: "AAA;BBB;CCC" 
   secretKey: "secret1;secret2;secret3"
