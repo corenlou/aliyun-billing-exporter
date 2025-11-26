@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    {{ include "aliyun-billing-exporter.labels" . | nindent 4 }}          
+  name: {{ include "aliyun-billing-exporter.fullname" . }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.port }}
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ include "aliyun-billing-exporter.name" . }}
+

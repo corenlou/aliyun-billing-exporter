@@ -1,0 +1,32 @@
+image:
+  repository: devocenter/aliyun-billing-exporter
+  tag: latest 
+  pullPolicy: IfNotPresent
+
+replicaCount: 1
+
+env:
+  region: "ap-southeast-1"
+  month: "2025-09"
+  account: "A;B;C"
+
+secret:
+  accessKey: "AAA;BBB;CCC" 
+  secretKey: "secret1;secret2;secret3"
+
+service:
+  port: 9105
+  type: ClusterIP
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
+
+serviceMonitor:
+  enabled: true
+  interval: 60s
+  scrapeTimeout: 20s 

@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "aliyun-billing-exporter.fullname" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "aliyun-billing-exporter.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "aliyun-billing-exporter.name" . }}
+    spec:
+      containers:
+        - name: exporter
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.port }}
+          env:
+            - name: ALIYUN_REGION
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "aliyun-billing-exporter.fullname" . }}-config
+                  key: REGION
+            - name: START_MONTH
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "aliyun-billing-exporter.fullname" . }}-config
+                  key: START_MONTH
+            - name: ACCOUNT 
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "aliyun-billing-exporter.fullname" . }}-config
+                  key: ACCOUNT
+            - name: EXPORTER_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ include "aliyun-billing-exporter.fullname" . }}-config
+                  key: EXPORTER_PORT
+            - name: ALIYUN_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "aliyun-billing-exporter.fullname" . }}-secret
+                  key: ALIYUN_ACCESS_KEY
+            - name: ALIYUN_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "aliyun-billing-exporter.fullname" . }}-secret
+                  key: ALIYUN_SECRET_KEY
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+

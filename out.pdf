@@ -1,0 +1,45 @@
+error calling LaTeX preprocessing: "exit status 1". Latex preprocessing failed with output: This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./report.tex
+LaTeX2e <2018-12-01>
+(/opt/TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+(/opt/TinyTeX/texmf-dist/tex/latex/base/size10.clo))
+(/opt/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+(/opt/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty)
+(/opt/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+(/opt/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty)
+(/opt/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/opt/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+(/opt/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
+(/opt/TinyTeX/texmf-dist/tex/generic/oberdiek/ifpdf.sty)
+(/opt/TinyTeX/texmf-dist/tex/generic/oberdiek/ifvtex.sty)
+(/opt/TinyTeX/texmf-dist/tex/generic/ifxetex/ifxetex.sty))
+No file report.aux.
+(/opt/TinyTeX/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/opt/TinyTeX/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/opt/TinyTeX/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/opt/TinyTeX/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+(/opt/TinyTeX/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/opt/TinyTeX/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/opt/TinyTeX/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+(/opt/TinyTeX/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+(/opt/TinyTeX/texmf-dist/tex/generic/oberdiek/ifluatex.sty))))
+(/opt/TinyTeX/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty)
+(/opt/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+
+! Package inputenc Error: Unicode character 阿 (U+963F)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 \maketitle
+               
+!  ==> Fatal error occurred, no output PDF file produced!
+Transcript written on report.log.
+ 

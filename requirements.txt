@@ -1,0 +1,5 @@
+flask
+prometheus_client
+aliyun-python-sdk-core
+aliyun-python-sdk-bssopenapi
+
